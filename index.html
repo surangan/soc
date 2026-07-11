@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty AI Build Challenge</title>
+  <meta name="description" content="90 minutes to build the future of computing education." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Faculty AI Build Challenge home">
+      <span class="brand-mark">AI</span>
+      <span>
+        <strong>Faculty AI Build Challenge</strong>
+        <small>School of Computing Faculty Retreat</small>
+      </span>
+    </a>
+    <nav>
+      <a href="#challenge">Challenge</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#ideas">Ideas</a>
+      <a href="#prompts">Prompts</a>
+      <a href="#submit">Submit</a>
+    </nav>
+    <a class="button button-small" href="#timer">Start building</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="eyebrow">17 teams · 7 faculty per team · 90 minutes</div>
+      <h1>Build something meaningful.<br><span>Before the clock runs out.</span></h1>
+      <p class="hero-copy">
+        Use AI as your engineer, designer, researcher and creative partner.
+        Leave with a functional prototype you can show, share and improve.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button" href="#challenge">View the challenge</a>
+        <a class="button button-secondary" href="#ideas">Browse project ideas</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <strong>119</strong>
+          <span>faculty participants</span>
+        </div>
+        <div>
+          <strong>17</strong>
+          <span>working prototypes</span>
+        </div>
+        <div>
+          <strong>1</strong>
+          <span>people’s choice winner</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="AI tools">
+      <div class="ticker-track">
+        <span>Codex</span><span>Claude</span><span>Antigravity</span><span>Cursor</span>
+        <span>ChatGPT</span><span>Gemini</span><span>Lovable</span><span>Bolt</span>
+        <span>Codex</span><span>Claude</span><span>Antigravity</span><span>Cursor</span>
+        <span>ChatGPT</span><span>Gemini</span><span>Lovable</span><span>Bolt</span>
+      </div>
+    </section>
+
+    <section id="challenge" class="section">
+      <div class="section-heading">
+        <span>01 · The challenge</span>
+        <h2>From idea to demo in 90 minutes</h2>
+        <p>Your team’s mission is simple: identify a real problem, build a working prototype with AI, and share a live link.</p>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="card feature-card">
+          <span class="card-number">01</span>
+          <h3>Choose a problem</h3>
+          <p>Pick something related to teaching, research, faculty productivity, student life or the future of computing.</p>
+        </article>
+        <article class="card feature-card">
+          <span class="card-number">02</span>
+          <h3>Build with AI</h3>
+          <p>Use any AI tool. You do not need to write all the code yourself. The point is to collaborate effectively with AI.</p>
+        </article>
+        <article class="card feature-card">
+          <span class="card-number">03</span>
+          <h3>Publish a prototype</h3>
+          <p>Your output should be demonstrable. A webpage, interactive tool, dashboard, visualiser or working simulation all count.</p>
+        </article>
+        <article class="card feature-card">
+          <span class="card-number">04</span>
+          <h3>Share and vote</h3>
+          <p>Add your link to the shared submission page. Everyone explores the projects and votes for their favourite.</p>
+        </article>
+      </div>
+
+      <div class="success-banner">
+        <div>
+          <span class="pill">Definition of success</span>
+          <h3>It works. It is useful. You can demo it.</h3>
+        </div>
+        <p>Do not optimise for production quality. Optimise for a clear idea, a compelling interaction and a memorable demo.</p>
+      </div>
+    </section>
+
+    <section id="schedule" class="section section-alt">
+      <div class="section-heading">
+        <span>02 · Run of show</span>
+        <h2>A fast, focused 90-minute sprint</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">0–10</div>
+          <div>
+            <span class="timeline-label">Inspire</span>
+            <h3>Opening and example demos</h3>
+            <p>See what can be created quickly and reset expectations about what AI-assisted building looks like.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10–20</div>
+          <div>
+            <span class="timeline-label">Learn</span>
+            <h3>Live build walkthrough</h3>
+            <p>Watch a simple idea become a polished webpage using an AI coding assistant and rapid deployment.</p>
+          </div>
+        </div>
+        <div class="timeline-item emphasis">
+          <div class="timeline-time">20–75</div>
+          <div>
+            <span class="timeline-label">Build</span>
+            <h3>Team hackathon</h3>
+            <p>55 minutes of focused prototyping. Split roles, prompt aggressively, test continuously and keep scope small.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">75–90</div>
+          <div>
+            <span class="timeline-label">Show</span>
+            <h3>Demo gallery and voting</h3>
+            <p>Each team shares its link. Faculty explore the gallery and vote for the project they most want to see continue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timer" class="section timer-section">
+      <div class="timer-panel">
+        <div>
+          <span class="pill">Hackathon timer</span>
+          <h2>Make the time visible.</h2>
+          <p>Use the 55-minute build timer during the team sprint, or switch to a full 90-minute event timer.</p>
+        </div>
+
+        <div class="timer-card">
+          <div class="timer-mode">
+            <button class="mode-button active" data-minutes="55">Build sprint</button>
+            <button class="mode-button" data-minutes="90">Full event</button>
+          </div>
+          <div id="timerDisplay" class="timer-display">55:00</div>
+          <div class="timer-controls">
+            <button id="startTimer" class="button">Start</button>
+            <button id="pauseTimer" class="button button-secondary">Pause</button>
+            <button id="resetTimer" class="button button-ghost">Reset</button>
+          </div>
+          <p id="timerMessage" class="timer-message">Ready when you are.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ideas" class="section">
+      <div class="section-heading split-heading">
+        <div>
+          <span>03 · Project menu</span>
+          <h2>Ideas small enough to finish</h2>
+        </div>
+        <div class="filter-wrap">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="teaching">Teaching</button>
+          <button class="filter" data-filter="research">Research</button>
+          <button class="filter" data-filter="productivity">Productivity</button>
+          <button class="filter" data-filter="student">Student life</button>
+        </div>
+      </div>
+
+      <div class="ideas-grid">
+        <article class="idea-card" data-category="teaching">
+          <span class="idea-category">Teaching</span>
+          <h3>Algorithm Visualiser</h3>
+          <p>Animate sorting, graph traversal or dynamic programming with controls, explanations and step-by-step playback.</p>
+          <small>Good for: polished visual demo</small>
+        </article>
+
+        <article class="idea-card" data-category="teaching">
+          <span class="idea-category">Teaching</span>
+          <h3>AI Office Hours</h3>
+          <p>A course-specific assistant that answers common student questions, recommends resources and suggests next steps.</p>
+          <small>Good for: conversational interface</small>
+        </article>
+
+        <article class="idea-card" data-category="teaching">
+          <span class="idea-category">Teaching</span>
+          <h3>Assessment Generator</h3>
+          <p>Turn lecture topics into MCQs, coding questions, rubrics and differentiated practice activities.</p>
+          <small>Good for: form-to-output workflow</small>
+        </article>
+
+        <article class="idea-card" data-category="research">
+          <span class="idea-category">Research</span>
+          <h3>Grant Proposal Reviewer</h3>
+          <p>Paste a proposal and receive a structured review covering significance, novelty, feasibility, risks and clarity.</p>
+          <small>Good for: high-value academic workflow</small>
+        </article>
+
+        <article class="idea-card" data-category="research">
+          <span class="idea-category">Research</span>
+          <h3>Collaboration Finder</h3>
+          <p>Enter research interests and receive suggested collaborators, complementary expertise and possible project themes.</p>
+          <small>Good for: matching and visualisation</small>
+        </article>
+
+        <article class="idea-card" data-category="research">
+          <span class="idea-category">Research</span>
+          <h3>Paper-to-Experiment Planner</h3>
+          <p>Convert a paper summary into hypotheses, variables, a study flow, risks and an indicative execution timeline.</p>
+          <small>Good for: structured generation</small>
+        </article>
+
+        <article class="idea-card" data-category="productivity">
+          <span class="idea-category">Faculty productivity</span>
+          <h3>Committee Decision Dashboard</h3>
+          <p>Summarise options, trade-offs, stakeholder views and open decisions in a clean one-page interface.</p>
+          <small>Good for: dashboard design</small>
+        </article>
+
+        <article class="idea-card" data-category="productivity">
+          <span class="idea-category">Faculty productivity</span>
+          <h3>Meeting-to-Action Converter</h3>
+          <p>Paste meeting notes and generate decisions, owners, deadlines, risks and a follow-up email.</p>
+          <small>Good for: workflow automation</small>
+        </article>
+
+        <article class="idea-card" data-category="student">
+          <span class="idea-category">Student life</span>
+          <h3>Degree Pathway Explorer</h3>
+          <p>Students choose interests and career goals; the app recommends modules, projects and possible pathways.</p>
+          <small>Good for: recommendation interface</small>
+        </article>
+
+        <article class="idea-card" data-category="student">
+          <span class="idea-category">Student life</span>
+          <h3>Project Team Matcher</h3>
+          <p>Match students based on skills, interests, schedules and preferred working styles.</p>
+          <small>Good for: playful interactive demo</small>
+        </article>
+
+        <article class="idea-card" data-category="student">
+          <span class="idea-category">Student life</span>
+          <h3>Internship Readiness Coach</h3>
+          <p>Turn a target role into a skill-gap analysis, preparation checklist and personalised 30-day plan.</p>
+          <small>Good for: personalised output</small>
+        </article>
+
+        <article class="idea-card wildcard" data-category="all">
+          <span class="idea-category">Wildcard</span>
+          <h3>Build the strange idea</h3>
+          <p>A research-fiction simulator, an AI dean, a future campus concierge, a debate machine or something nobody expects.</p>
+          <small>Good for: memorability</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="prompts" class="section section-alt">
+      <div class="section-heading">
+        <span>04 · Starter prompts</span>
+        <h2>Copy, adapt and build</h2>
+        <p>Strong prompts reduce setup time. Start with a clear audience, a narrow job and a visible interaction.</p>
+      </div>
+
+      <div class="prompt-grid">
+        <article class="prompt-card">
+          <div class="prompt-topline">
+            <span>Universal web app prompt</span>
+            <button class="copy-button" data-copy="prompt1">Copy</button>
+          </div>
+          <pre id="prompt1">Build a polished, responsive web application for [AUDIENCE] that helps them [JOB TO BE DONE].
+
+The app should:
+- have one clear primary interaction
+- use realistic sample data
+- show the result visually
+- include helpful empty, loading and success states
+- feel like a real product, not a wireframe
+- work without a backend where possible
+
+Use a modern, minimal interface. Keep the first version small enough to finish quickly.</pre>
+        </article>
+
+        <article class="prompt-card">
+          <div class="prompt-topline">
+            <span>Improve an existing prototype</span>
+            <button class="copy-button" data-copy="prompt2">Copy</button>
+          </div>
+          <pre id="prompt2">Review this prototype as a product designer and senior engineer.
+
+Improve:
+1. visual hierarchy
+2. clarity of the main user journey
+3. demo impact
+4. mobile responsiveness
+5. error handling
+6. realism of sample data
+
+Do not add unnecessary features. Prioritise changes that make the prototype easier to understand in a 60-second demo.</pre>
+        </article>
+
+        <article class="prompt-card">
+          <div class="prompt-topline">
+            <span>Fix and deploy</span>
+            <button class="copy-button" data-copy="prompt3">Copy</button>
+          </div>
+          <pre id="prompt3">Check the project for errors, run it locally, fix any broken functionality, and prepare it for deployment.
+
+Then:
+- add a concise README
+- verify all buttons work
+- remove placeholder text
+- ensure the homepage explains the value in under 10 seconds
+- provide the simplest deployment steps for a public link</pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tools-section">
+      <div class="section-heading">
+        <span>05 · Tool choices</span>
+        <h2>Use whatever gets your team moving</h2>
+      </div>
+
+      <div class="tool-columns">
+        <div class="tool-column">
+          <span class="pill">Fastest start</span>
+          <h3>Prompt-to-web tools</h3>
+          <p>Best for teams that want a polished interface with minimal setup.</p>
+          <div class="tool-tags">
+            <span>Lovable</span><span>Bolt</span><span>v0</span><span>Replit</span>
+          </div>
+        </div>
+        <div class="tool-column">
+          <span class="pill">More control</span>
+          <h3>AI coding agents</h3>
+          <p>Best for teams comfortable working with files, terminals and iterative development.</p>
+          <div class="tool-tags">
+            <span>Codex</span><span>Claude Code</span><span>Cursor</span><span>Antigravity</span>
+          </div>
+        </div>
+        <div class="tool-column">
+          <span class="pill">Idea and content</span>
+          <h3>General AI assistants</h3>
+          <p>Best for shaping the concept, generating content, debugging and improving the pitch.</p>
+          <div class="tool-tags">
+            <span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Perplexity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section judging-section">
+      <div class="section-heading">
+        <span>06 · People’s choice</span>
+        <h2>What will faculty vote for?</h2>
+      </div>
+
+      <div class="judging-grid">
+        <div class="score-card">
+          <strong>30%</strong>
+          <h3>Usefulness</h3>
+          <p>Does it address a real and recognisable need?</p>
+        </div>
+        <div class="score-card">
+          <strong>25%</strong>
+          <h3>Demo quality</h3>
+          <p>Is the value obvious in less than one minute?</p>
+        </div>
+        <div class="score-card">
+          <strong>25%</strong>
+          <h3>Creativity</h3>
+          <p>Does the idea or interaction feel fresh and memorable?</p>
+        </div>
+        <div class="score-card">
+          <strong>20%</strong>
+          <h3>Potential</h3>
+          <p>Would people like to see this developed further?</p>
+        </div>
+      </div>
+
+      <div class="prize-banner">
+        <div class="voucher-icon">✦</div>
+        <div>
+          <span class="pill">Winning team</span>
+          <h3>Fancy buffet vouchers</h3>
+          <p>Because excellent ideas deserve excellent food.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="submit" class="section submit-section">
+      <div class="submit-panel">
+        <div>
+          <span class="pill">Final step</span>
+          <h2>Share your prototype</h2>
+          <p>Add your team name, one-sentence pitch and public demo link to the shared page before time is called.</p>
+        </div>
+
+        <div class="submit-actions">
+          <a class="button disabled-link" href="#" aria-disabled="true" title="Replace this link in index.html">
+            Open submission document
+          </a>
+          <a class="button button-secondary disabled-link" href="#" aria-disabled="true" title="Replace this link in index.html">
+            Open voting form
+          </a>
+          <small>Organiser: replace these two placeholder links with your Google Doc and Google Form URLs.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <span class="eyebrow">One retreat. Ninety minutes. Seventeen prototypes.</span>
+      <h2>The future will not be explained.<br>It will be built.</h2>
+      <a class="button" href="#timer">Start the challenge</a>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Faculty AI Build Challenge</strong>
+      <p>Designed for rapid experimentation, playful collaboration and meaningful hands-on learning.</p>
+    </div>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
