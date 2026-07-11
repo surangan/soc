@@ -385,22 +385,22 @@ Then:
 
       <div class="judging-grid">
         <div class="score-card">
-          <strong>30%</strong>
-          <h3>Usefulness</h3>
-          <p>Does it address a real and recognisable need?</p>
-        </div>
-        <div class="score-card">
-          <strong>25%</strong>
+          <strong>55%</strong>
           <h3>Demo quality</h3>
           <p>Is the value obvious in less than one minute?</p>
         </div>
         <div class="score-card">
-          <strong>25%</strong>
+          <strong>15%</strong>
+          <h3>Usefulness</h3>
+          <p>Does it address a real and recognisable need?</p>
+        </div>
+        <div class="score-card">
+          <strong>15%</strong>
           <h3>Creativity</h3>
           <p>Does the idea or interaction feel fresh and memorable?</p>
         </div>
         <div class="score-card">
-          <strong>20%</strong>
+          <strong>15%</strong>
           <h3>Potential</h3>
           <p>Would people like to see this developed further?</p>
         </div>
@@ -419,44 +419,23 @@ Then:
     <section id="submit" class="section submit-section">
       <div class="submit-shell">
         <div class="submit-intro">
-          <span class="pill">Final step</span>
-          <h2>Share your prototype</h2>
-          <p>Teams add their project details to the shared Google Sheet. The gallery reads from that sheet, opens project URLs from each image, and sends non-anonymous votes to a Google Form.</p>
+          <span class="pill">Prototype gallery</span>
+          <h2>Seventeen builds in one gallery</h2>
+          <p>Each team card shows a title, placeholder image and one-line description. When the project Google Sheet is ready, paste its published CSV URL into event-config.js and the gallery will update automatically.</p>
         </div>
 
-        <div class="project-workspace">
-          <div class="project-intake-card">
-            <div>
-              <span class="pill">Google Sheet inputs</span>
-              <h3>One row per team</h3>
-              <p>Use a shared Sheet, or a Google Form feeding a Sheet, with these columns:</p>
-            </div>
-            <div class="sheet-fields" aria-label="Recommended Google Sheet columns">
-              <span>Team</span>
-              <span>Project Title</span>
-              <span>Project URL</span>
-              <span>Image URL</span>
-              <span>Pitch</span>
-            </div>
-            <div class="form-actions">
-              <a id="projectSubmissionLink" class="button" href="#" aria-disabled="true">Project input sheet placeholder</a>
-              <a id="projectSheetLink" class="button button-secondary" href="#" aria-disabled="true">Gallery data source placeholder</a>
-            </div>
-            <p id="projectSourceStatus" class="form-note">Placeholder gallery: add a published Google Sheet CSV URL in event-config.js to load live submissions.</p>
+        <div class="gallery-source-card">
+          <div>
+            <span class="pill">Google Sheet data</span>
+            <h3>One row per prototype</h3>
+            <p id="projectSourceStatus">Placeholder gallery: add a published Google Sheet CSV URL in event-config.js to load live submissions.</p>
           </div>
-
-          <div class="vote-panel">
-            <div>
-              <span class="pill">Non-anonymous voting</span>
-              <h3>Vote through Google Form</h3>
-              <p>Use a Form that collects names or NUS emails. Each project card can open the voting form, and results can be counted from the response Sheet.</p>
-            </div>
-            <div class="form-actions">
-              <a id="votingFormLink" class="button" href="#" aria-disabled="true">Voting form placeholder</a>
-              <a id="voteResultsLink" class="button button-secondary" href="#" aria-disabled="true">Vote results placeholder</a>
-            </div>
-            <p id="voteStatus">Placeholder voting: add the Google Form and response Sheet links in event-config.js.</p>
-            <div id="voteResults" class="vote-results" aria-live="polite"></div>
+          <div class="sheet-fields" aria-label="Recommended Google Sheet columns">
+            <span>Team</span>
+            <span>Title</span>
+            <span>Image URL</span>
+            <span>Description</span>
+            <span>Project URL</span>
           </div>
         </div>
 

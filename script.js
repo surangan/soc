@@ -127,39 +127,13 @@ const projectGallery = document.getElementById('projectGallery');
 const voteResults = document.getElementById('voteResults');
 const voteStatus = document.getElementById('voteStatus');
 const projectSourceStatus = document.getElementById('projectSourceStatus');
-const projectSubmissionLink = document.getElementById('projectSubmissionLink');
-const projectSheetLink = document.getElementById('projectSheetLink');
-const votingFormLink = document.getElementById('votingFormLink');
-const voteResultsLink = document.getElementById('voteResultsLink');
 const challengeConfig = window.challengeConfig || {};
-
-function isConfiguredUrl(url) {
-  return Boolean(url && url !== '#');
-}
 
 function normaliseUrl(url) {
   const trimmed = String(url || '').trim();
   if (!trimmed || trimmed === '#') return '';
   if (/^(https?:|data:|mailto:)/i.test(trimmed)) return trimmed;
   return `https://${trimmed}`;
-}
-
-function configureExternalLink(link, url, readyText, placeholderText) {
-  if (!link) return;
-
-  const configuredUrl = normaliseUrl(url);
-  link.textContent = configuredUrl ? readyText : placeholderText;
-  link.href = configuredUrl || '#';
-
-  if (configuredUrl) {
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.removeAttribute('aria-disabled');
-  } else {
-    link.removeAttribute('target');
-    link.removeAttribute('rel');
-    link.setAttribute('aria-disabled', 'true');
-  }
 }
 
 function escapeSvg(text) {
@@ -270,7 +244,7 @@ function mapProject(project, index) {
   const title = pick(row, ['Project Title', 'Title', 'Project']) || row.title || `${team} prototype`;
   const url = pick(row, ['Project URL', 'Prototype URL', 'URL', 'Link']) || row.url || '';
   const image = pick(row, ['Image URL', 'Screenshot URL', 'Image', 'Screenshot']) || row.image || '';
-  const pitch = pick(row, ['Pitch', 'One-sentence Pitch', 'Description', 'Summary']) || row.pitch || 'Project details will appear here after the team updates the Google Sheet.';
+  const pitch = pick(row, ['Description', 'One-line Description', 'Pitch', 'One-sentence Pitch', 'Summary']) || row.pitch || 'Project details will appear here after the team updates the Google Sheet.';
   const id = slugify(`${team}-${title}`) || `project-${index + 1}`;
 
   return {
@@ -422,29 +396,39 @@ function renderProjects(projects, voteCounts = new Map(), resultsConfigured = fa
     const actions = document.createElement('div');
     actions.className = 'project-card-actions';
 
-    const voteCount = document.createElement('span');
-    voteCount.className = 'vote-count';
-    const votes = voteCounts.get(project.id) || 0;
-    voteCount.textContent = resultsConfigured
-      ? `${votes} vote${votes === 1 ? '' : 's'}`
-      : 'Votes in Google Form';
-
-    const voteLink = document.createElement('a');
-    voteLink.className = 'button button-secondary vote-button';
-    voteLink.textContent = isConfiguredUrl(challengeConfig.votingFormUrl) ? 'Vote' : 'Voting placeholder';
-
-    const voteUrl = buildVoteUrl(project);
-    voteLink.href = voteUrl || '#';
-
-    if (voteUrl) {
-      voteLink.target = '_blank';
-      voteLink.rel = 'noopener noreferrer';
-    } else {
-      voteLink.setAttribute('aria-disabled', 'true');
+    if (project.url) {
+      const openLink = document.createElement('a');
+      openLink.className = 'button button-secondary project-action-button';
+      openLink.href = project.url;
+      openLink.target = '_blank';
+      openLink.rel = 'noopener noreferrer';
+      openLink.textContent = 'Open prototype';
+      actions.appendChild(openLink);
     }
 
-    actions.append(voteCount, voteLink);
-    body.append(meta, title, pitch, actions);
+    if (resultsConfigured) {
+      const voteCount = document.createElement('span');
+      voteCount.className = 'vote-count';
+      const votes = voteCounts.get(project.id) || 0;
+      voteCount.textContent = `${votes} vote${votes === 1 ? '' : 's'}`;
+      actions.appendChild(voteCount);
+    }
+
+    const voteUrl = buildVoteUrl(project);
+    if (voteUrl) {
+      const voteLink = document.createElement('a');
+      voteLink.className = 'button button-secondary project-action-button';
+      voteLink.href = voteUrl;
+      voteLink.target = '_blank';
+      voteLink.rel = 'noopener noreferrer';
+      voteLink.textContent = 'Vote';
+      actions.appendChild(voteLink);
+    }
+
+    body.append(meta, title, pitch);
+    if (actions.childElementCount) {
+      body.appendChild(actions);
+    }
     card.append(imageBox, body);
     projectGallery.appendChild(card);
   });
@@ -525,41 +509,9 @@ async function loadVoteCounts(projects) {
 }
 
 async function initialiseProjectGallery() {
-  configureExternalLink(
-    projectSubmissionLink,
-    challengeConfig.projectSubmissionUrl,
-    'Open project input sheet',
-    'Project input sheet placeholder'
-  );
-  configureExternalLink(
-    projectSheetLink,
-    challengeConfig.projectSheetCsvUrl,
-    'Open gallery data source',
-    'Gallery data source placeholder'
-  );
-  configureExternalLink(
-    votingFormLink,
-    challengeConfig.votingFormUrl,
-    'Open voting form',
-    'Voting form placeholder'
-  );
-  configureExternalLink(
-    voteResultsLink,
-    challengeConfig.voteResultsUrl || challengeConfig.voteResultsCsvUrl,
-    'Open vote results',
-    'Vote results placeholder'
-  );
-
   const projects = await loadProjects();
   const { voteCounts, resultsConfigured } = await loadVoteCounts(projects);
   renderProjects(projects, voteCounts, resultsConfigured);
 }
-
-document.addEventListener('click', event => {
-  const disabledLink = event.target.closest('a[aria-disabled="true"]');
-  if (disabledLink) {
-    event.preventDefault();
-  }
-});
 
 initialiseProjectGallery();

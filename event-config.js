@@ -1,7 +1,8 @@
 window.challengeConfig = {
-  // Replace these placeholder links before the retreat.
-  projectSubmissionUrl: "#",
+  // Replace this with the published CSV URL for the project Google Sheet.
   projectSheetCsvUrl: "",
+
+  // Optional voting configuration.
   votingFormUrl: "#",
   votingFormProjectField: "",
   voteResultsUrl: "#",
@@ -11,122 +12,122 @@ window.challengeConfig = {
   fallbackProjects: [
     {
       team: "Team 01",
-      title: "Team 01 prototype",
+      title: "AI Office Hours",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A course assistant that answers common student questions and points learners to the right resources."
     },
     {
       team: "Team 02",
-      title: "Team 02 prototype",
+      title: "Algorithm Visualiser",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "An interactive walkthrough for algorithms with controls, explanations and step-by-step playback."
     },
     {
       team: "Team 03",
-      title: "Team 03 prototype",
+      title: "Assessment Studio",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A quick generator for practice questions, rubrics and differentiated learning activities."
     },
     {
       team: "Team 04",
-      title: "Team 04 prototype",
+      title: "Grant Proposal Reviewer",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A structured review assistant for significance, novelty, feasibility, risks and clarity."
     },
     {
       team: "Team 05",
-      title: "Team 05 prototype",
+      title: "Collaboration Finder",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A matching tool that suggests collaborators and project themes from research interests."
     },
     {
       team: "Team 06",
-      title: "Team 06 prototype",
+      title: "Paper-to-Experiment Planner",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A planner that turns a paper summary into hypotheses, variables, risks and a study flow."
     },
     {
       team: "Team 07",
-      title: "Team 07 prototype",
+      title: "Committee Dashboard",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A one-page dashboard for options, trade-offs, stakeholder views and open decisions."
     },
     {
       team: "Team 08",
-      title: "Team 08 prototype",
+      title: "Meeting-to-Action Converter",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A workflow that converts messy notes into decisions, owners, deadlines and follow-ups."
     },
     {
       team: "Team 09",
-      title: "Team 09 prototype",
+      title: "Degree Pathway Explorer",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A guide that recommends modules, projects and pathways from student goals and interests."
     },
     {
       team: "Team 10",
-      title: "Team 10 prototype",
+      title: "Project Team Matcher",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A matcher that forms student teams from skills, interests, schedules and working styles."
     },
     {
       team: "Team 11",
-      title: "Team 11 prototype",
+      title: "Internship Coach",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A readiness coach that turns a target role into a skill-gap analysis and 30-day plan."
     },
     {
       team: "Team 12",
-      title: "Team 12 prototype",
+      title: "Research Impact Mapper",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A visual map of research themes, audiences, collaborators and possible impact pathways."
     },
     {
       team: "Team 13",
-      title: "Team 13 prototype",
+      title: "Course Feedback Synthesiser",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A summariser that turns feedback comments into patterns, risks and concrete teaching actions."
     },
     {
       team: "Team 14",
-      title: "Team 14 prototype",
+      title: "Teaching Case Generator",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A tool for creating localised computing cases, discussion prompts and classroom activities."
     },
     {
       team: "Team 15",
-      title: "Team 15 prototype",
+      title: "Future Campus Concierge",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A campus assistant concept that helps faculty and students navigate services and decisions."
     },
     {
       team: "Team 16",
-      title: "Team 16 prototype",
+      title: "Research Mentor Simulator",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A simulated mentor that helps refine research questions, assumptions and next experiments."
     },
     {
       team: "Team 17",
-      title: "Team 17 prototype",
+      title: "Faculty Workflow Assistant",
       url: "",
       image: "",
-      pitch: "Project details will appear here after the team updates the Google Sheet."
+      pitch: "A productivity assistant for recurring faculty workflows, summaries and decision preparation."
     }
   ]
 };
