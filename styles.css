@@ -159,6 +159,13 @@ nav a:hover {
   box-shadow: none;
 }
 
+.button[aria-disabled="true"] {
+  opacity: .58;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .hero {
   position: relative;
   max-width: var(--max);
@@ -665,13 +672,21 @@ pre {
   margin-top: 26px;
 }
 
-.tool-tags span {
+.tool-tags a {
   padding: 8px 11px;
   border-radius: 8px;
   background: var(--bg-soft);
   color: var(--blue);
   font-size: .86rem;
   font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.tool-tags a:hover,
+.tool-tags a:focus-visible {
+  border-color: var(--orange);
+  color: var(--orange);
+  outline: none;
 }
 
 .score-card { padding: 26px; }
@@ -747,13 +762,49 @@ pre {
   align-items: stretch;
 }
 
-.project-form,
+.project-intake-card,
 .vote-panel,
 .project-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 12px 28px rgba(16, 42, 67, .06);
+}
+
+.project-intake-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 24px;
+}
+
+.project-intake-card h3 {
+  margin: 14px 0 8px;
+  color: var(--blue);
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-size: 1.8rem;
+}
+
+.project-intake-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.sheet-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sheet-fields span {
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--blue);
+  font-size: .84rem;
+  font-weight: 700;
 }
 
 .project-form {
@@ -942,6 +993,13 @@ pre {
 .vote-count {
   color: var(--blue);
   font-weight: 800;
+}
+
+.vote-button {
+  min-height: 40px;
+  padding: 0 14px;
+  box-shadow: none;
+  white-space: nowrap;
 }
 
 .vote-button[disabled] {
