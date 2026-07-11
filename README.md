@@ -6,18 +6,39 @@ A self-contained static website for the NUS Computing Faculty Retreat Hackathon 
 
 - `index.html` — page content and structure
 - `styles.css` — visual design and responsive layout
-- `script.js` — timer, filters and copy buttons
+- `event-config.js` — Google Sheet/Form links and 17 placeholder project rows
+- `script.js` — timer, filters, copy buttons, project gallery and vote counting
 
 ## Customise before the event
 
-Open `index.html` and replace the two placeholder links in the **Share your prototype** section:
+Open `event-config.js` and replace the placeholder links:
 
-```html
-<a class="button disabled-link" href="#">Open submission document</a>
-<a class="button button-secondary disabled-link" href="#">Open voting form</a>
+```js
+projectSubmissionUrl: "#",
+projectSheetCsvUrl: "",
+votingFormUrl: "#",
+voteResultsUrl: "#",
+voteResultsCsvUrl: "",
 ```
 
-Replace `#` with your Google Doc and Google Form URLs. You can then remove the `disabled-link` class if desired.
+Recommended project Sheet columns:
+
+- `Team`
+- `Project Title`
+- `Project URL`
+- `Image URL`
+- `Pitch`
+
+To power the gallery from Google Sheets:
+
+1. Create a Google Sheet with the columns above.
+2. Choose **File > Share > Publish to web**.
+3. Publish the project tab as CSV.
+4. Paste the CSV URL into `projectSheetCsvUrl`.
+
+For voting, create a Google Form that collects names or NUS emails and asks voters to choose a project. If you want the site to display vote totals, link the Form responses to a Sheet, publish the response Sheet as CSV, and paste that CSV URL into `voteResultsCsvUrl`.
+
+Optional: if you use a pre-filled Google Form field for the selected project, paste its entry ID, such as `entry.123456789`, into `votingFormProjectField`. Each project card will then open the voting form with that project pre-selected.
 
 You may also update:
 
