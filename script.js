@@ -155,7 +155,7 @@ function placeholderImage(project) {
       <text x="108" y="111" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">NUS Computing</text>
       <text x="90" y="230" fill="#ef7c00" font-family="Arial, sans-serif" font-size="34" font-weight="700">${safeTeam}</text>
       <text x="90" y="310" fill="#003d7c" font-family="Arial, sans-serif" font-size="56" font-weight="700">${safeTitle}</text>
-      <text x="90" y="382" fill="#52677d" font-family="Arial, sans-serif" font-size="28">Project preview</text>
+      <text x="90" y="382" fill="#52677d" font-family="Arial, sans-serif" font-size="28">Dummy image</text>
     </svg>
   `;
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
@@ -244,7 +244,7 @@ function mapProject(project, index) {
   const title = pick(row, ['Project Title', 'Title', 'Project']) || row.title || `${team} prototype`;
   const url = pick(row, ['Project URL', 'Prototype URL', 'URL', 'Link']) || row.url || '';
   const image = pick(row, ['Image URL', 'Screenshot URL', 'Image', 'Screenshot']) || row.image || '';
-  const pitch = pick(row, ['Description', 'One-line Description', 'Pitch', 'One-sentence Pitch', 'Summary']) || row.pitch || 'Project details will appear here after the team updates the Google Sheet.';
+  const pitch = pick(row, ['Description', 'One-line Description', 'Pitch', 'One-sentence Pitch', 'Summary']) || row.pitch || 'Dummy text.';
   const id = slugify(`${team}-${title}`) || `project-${index + 1}`;
 
   return {
@@ -376,7 +376,7 @@ function renderProjects(projects, voteCounts = new Map(), resultsConfigured = fa
 
     const image = document.createElement('img');
     image.src = project.image || placeholderImage(project);
-    image.alt = `${project.title} project preview`;
+    image.alt = `${project.title} dummy image`;
     image.loading = 'lazy';
     imageBox.appendChild(image);
 
@@ -442,26 +442,26 @@ async function loadProjects() {
 
   if (!sheetUrl) {
     if (projectSourceStatus) {
-      projectSourceStatus.textContent = 'Placeholder gallery: add a published Google Sheet CSV URL in event-config.js to load live submissions.';
+      projectSourceStatus.textContent = 'Placeholder gallery: add an external CSV URL in event-config.js to load live submissions.';
     }
     return projects;
   }
 
   if (projectSourceStatus) {
-    projectSourceStatus.textContent = 'Loading project gallery from the published Google Sheet...';
+    projectSourceStatus.textContent = 'Loading project gallery from the external CSV data source...';
   }
 
   try {
     const sheetProjects = (await fetchCsvRows(sheetUrl)).map(mapProject).filter(project => project.team || project.title);
-    if (!sheetProjects.length) throw new Error('The published Sheet did not contain project rows.');
+    if (!sheetProjects.length) throw new Error('The external CSV data source did not contain project rows.');
 
     if (projectSourceStatus) {
-      projectSourceStatus.textContent = `Loaded ${sheetProjects.length} project${sheetProjects.length === 1 ? '' : 's'} from the published Google Sheet.`;
+      projectSourceStatus.textContent = `Loaded ${sheetProjects.length} project${sheetProjects.length === 1 ? '' : 's'} from the external CSV data source.`;
     }
     return sheetProjects;
   } catch {
     if (projectSourceStatus) {
-      projectSourceStatus.textContent = 'Could not load the published Google Sheet. Showing the 17-team placeholder gallery until the CSV link is updated.';
+      projectSourceStatus.textContent = 'Could not load the external CSV data source. Showing the 17-team placeholder gallery until the CSV link is updated.';
     }
     return projects;
   }
@@ -495,13 +495,13 @@ async function loadVoteCounts(projects) {
     });
 
     if (voteStatus) {
-      voteStatus.textContent = 'Vote totals are loaded from the published Google Form response Sheet.';
+      voteStatus.textContent = 'Vote totals are loaded from the published response CSV.';
     }
     renderVoteResults(projects, voteCounts, true);
     return { voteCounts, resultsConfigured: true };
   } catch {
     if (voteStatus) {
-      voteStatus.textContent = 'Could not load vote totals yet. Check that the Google Form response Sheet is published as CSV.';
+      voteStatus.textContent = 'Could not load vote totals yet. Check that the response data source is published as CSV.';
     }
     renderVoteResults(projects, voteCounts, false);
     return { voteCounts, resultsConfigured: false };

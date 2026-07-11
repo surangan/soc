@@ -762,7 +762,6 @@ pre {
   align-items: stretch;
 }
 
-.gallery-source-card,
 .project-intake-card,
 .vote-panel,
 .project-card {
@@ -770,26 +769,6 @@ pre {
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 12px 28px rgba(16, 42, 67, .06);
-}
-
-.gallery-source-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: center;
-  padding: 24px;
-}
-
-.gallery-source-card h3 {
-  margin: 14px 0 8px;
-  color: var(--blue);
-  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
-  font-size: 1.8rem;
-}
-
-.gallery-source-card p {
-  margin: 0;
-  color: var(--muted);
 }
 
 .project-intake-card {
@@ -810,22 +789,6 @@ pre {
 .project-intake-card p {
   margin: 0;
   color: var(--muted);
-}
-
-.sheet-fields {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.sheet-fields span {
-  padding: 8px 11px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--bg-soft);
-  color: var(--blue);
-  font-size: .84rem;
-  font-weight: 700;
 }
 
 .project-form {
@@ -1067,7 +1030,6 @@ footer a:hover { color: #fff; }
   }
   .prompt-grid,
   .tool-columns,
-  .gallery-source-card,
   .project-workspace {
     grid-template-columns: 1fr;
   }

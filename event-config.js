@@ -1,5 +1,5 @@
 window.challengeConfig = {
-  // Replace this with the published CSV URL for the project Google Sheet.
+  // Optional external CSV data source. Leave blank to use the dummy gallery below.
   projectSheetCsvUrl: "",
 
   // Optional voting configuration.
@@ -12,122 +12,122 @@ window.challengeConfig = {
   fallbackProjects: [
     {
       team: "Team 01",
-      title: "AI Office Hours",
+      title: "Project 01 title placeholder",
       url: "",
       image: "",
-      pitch: "A course assistant that answers common student questions and points learners to the right resources."
+      pitch: "Dummy text."
     },
     {
       team: "Team 02",
-      title: "Algorithm Visualiser",
+      title: "Project 02 title placeholder",
       url: "",
       image: "",
-      pitch: "An interactive walkthrough for algorithms with controls, explanations and step-by-step playback."
+      pitch: "Dummy text."
     },
     {
       team: "Team 03",
-      title: "Assessment Studio",
+      title: "Project 03 title placeholder",
       url: "",
       image: "",
-      pitch: "A quick generator for practice questions, rubrics and differentiated learning activities."
+      pitch: "Dummy text."
     },
     {
       team: "Team 04",
-      title: "Grant Proposal Reviewer",
+      title: "Project 04 title placeholder",
       url: "",
       image: "",
-      pitch: "A structured review assistant for significance, novelty, feasibility, risks and clarity."
+      pitch: "Dummy text."
     },
     {
       team: "Team 05",
-      title: "Collaboration Finder",
+      title: "Project 05 title placeholder",
       url: "",
       image: "",
-      pitch: "A matching tool that suggests collaborators and project themes from research interests."
+      pitch: "Dummy text."
     },
     {
       team: "Team 06",
-      title: "Paper-to-Experiment Planner",
+      title: "Project 06 title placeholder",
       url: "",
       image: "",
-      pitch: "A planner that turns a paper summary into hypotheses, variables, risks and a study flow."
+      pitch: "Dummy text."
     },
     {
       team: "Team 07",
-      title: "Committee Dashboard",
+      title: "Project 07 title placeholder",
       url: "",
       image: "",
-      pitch: "A one-page dashboard for options, trade-offs, stakeholder views and open decisions."
+      pitch: "Dummy text."
     },
     {
       team: "Team 08",
-      title: "Meeting-to-Action Converter",
+      title: "Project 08 title placeholder",
       url: "",
       image: "",
-      pitch: "A workflow that converts messy notes into decisions, owners, deadlines and follow-ups."
+      pitch: "Dummy text."
     },
     {
       team: "Team 09",
-      title: "Degree Pathway Explorer",
+      title: "Project 09 title placeholder",
       url: "",
       image: "",
-      pitch: "A guide that recommends modules, projects and pathways from student goals and interests."
+      pitch: "Dummy text."
     },
     {
       team: "Team 10",
-      title: "Project Team Matcher",
+      title: "Project 10 title placeholder",
       url: "",
       image: "",
-      pitch: "A matcher that forms student teams from skills, interests, schedules and working styles."
+      pitch: "Dummy text."
     },
     {
       team: "Team 11",
-      title: "Internship Coach",
+      title: "Project 11 title placeholder",
       url: "",
       image: "",
-      pitch: "A readiness coach that turns a target role into a skill-gap analysis and 30-day plan."
+      pitch: "Dummy text."
     },
     {
       team: "Team 12",
-      title: "Research Impact Mapper",
+      title: "Project 12 title placeholder",
       url: "",
       image: "",
-      pitch: "A visual map of research themes, audiences, collaborators and possible impact pathways."
+      pitch: "Dummy text."
     },
     {
       team: "Team 13",
-      title: "Course Feedback Synthesiser",
+      title: "Project 13 title placeholder",
       url: "",
       image: "",
-      pitch: "A summariser that turns feedback comments into patterns, risks and concrete teaching actions."
+      pitch: "Dummy text."
     },
     {
       team: "Team 14",
-      title: "Teaching Case Generator",
+      title: "Project 14 title placeholder",
       url: "",
       image: "",
-      pitch: "A tool for creating localised computing cases, discussion prompts and classroom activities."
+      pitch: "Dummy text."
     },
     {
       team: "Team 15",
-      title: "Future Campus Concierge",
+      title: "Project 15 title placeholder",
       url: "",
       image: "",
-      pitch: "A campus assistant concept that helps faculty and students navigate services and decisions."
+      pitch: "Dummy text."
     },
     {
       team: "Team 16",
-      title: "Research Mentor Simulator",
+      title: "Project 16 title placeholder",
       url: "",
       image: "",
-      pitch: "A simulated mentor that helps refine research questions, assumptions and next experiments."
+      pitch: "Dummy text."
     },
     {
       team: "Team 17",
-      title: "Faculty Workflow Assistant",
+      title: "Project 17 title placeholder",
       url: "",
       image: "",
-      pitch: "A productivity assistant for recurring faculty workflows, summaries and decision preparation."
+      pitch: "Dummy text."
     }
   ]
 };

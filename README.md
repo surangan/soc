@@ -6,35 +6,20 @@ A self-contained static website for the NUS Computing Faculty Retreat Hackathon 
 
 - `index.html` — page content and structure
 - `styles.css` — visual design and responsive layout
-- `event-config.js` — Google Sheet links and 17 placeholder project rows
+- `event-config.js` — 17 placeholder project rows and optional external data links
 - `script.js` — timer, filters, copy buttons and project gallery loading
 
 ## Customise before the event
 
-Open `event-config.js` and replace the placeholder links:
+Open `event-config.js` and update the 17 `fallbackProjects` rows when final project details are ready. Each row supports:
 
-```js
-projectSheetCsvUrl: "",
-```
+- `team`
+- `title`
+- `url`
+- `image`
+- `pitch`
 
-Recommended project Sheet columns:
-
-- `Team`
-- `Title` or `Project Title`
-- `Image URL`
-- `Description`
-- `Project URL`
-
-To power the gallery from Google Sheets:
-
-1. Create a Google Sheet with the columns above.
-2. Choose **File > Share > Publish to web**.
-3. Publish the project tab as CSV.
-4. Paste the CSV URL into `projectSheetCsvUrl`.
-
-For voting, create a Google Form that collects names or NUS emails and asks voters to choose a project. If you want the site to display vote totals, link the Form responses to a Sheet, publish the response Sheet as CSV, and paste that CSV URL into `voteResultsCsvUrl`.
-
-Optional: if you use a pre-filled Google Form field for the selected project, paste the form URL into `votingFormUrl` and its entry ID, such as `entry.123456789`, into `votingFormProjectField`. Each project card will then show a vote button with that project pre-filled.
+The current gallery intentionally uses dummy images, placeholder titles and dummy text.
 
 You may also update:
 
