@@ -1,6 +1,7 @@
 window.challengeConfig = {
-  // Optional external CSV data source. Leave blank to use the dummy gallery below.
-  projectSheetCsvUrl: "",
+  // Update projects by editing or replacing projects.csv.
+  projectDataCsvUrl: "./projects.csv?v=project-showcase-image",
+  defaultProjectImage: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
 
   // Optional voting configuration.
   votingFormUrl: "#",
