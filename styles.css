@@ -14,6 +14,9 @@
   --green: #007a53;
   --shadow: 0 18px 42px rgba(16, 42, 67, .10);
   --max: 1180px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --section-y: clamp(76px, 8vw, 104px);
+  --grid-gap: 20px;
 }
 
 * { box-sizing: border-box; }
@@ -54,7 +57,7 @@ button { font: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 14px max(24px, calc((100vw - var(--max)) / 2));
+  padding: 14px max(var(--gutter), calc((100vw - var(--max)) / 2));
   border-bottom: 3px solid var(--orange);
   background: rgba(255, 255, 255, .94);
   backdrop-filter: blur(18px);
@@ -171,9 +174,9 @@ nav a:hover {
 
 .hero {
   position: relative;
-  max-width: var(--max);
+  width: min(calc(100% - (var(--gutter) * 2)), var(--max));
   margin: 0 auto;
-  padding: 108px 24px 80px;
+  padding: 108px 0 80px;
   text-align: center;
   overflow: hidden;
 }
@@ -181,7 +184,7 @@ nav a:hover {
 .hero::before {
   content: "";
   position: absolute;
-  inset: 40px 24px auto;
+  inset: 40px 0 auto;
   height: 6px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--blue), var(--orange), var(--green));
@@ -309,21 +312,22 @@ nav a:hover {
 @keyframes ticker { to { transform: translateX(-50%); } }
 
 .section {
-  max-width: var(--max);
+  width: min(calc(100% - (var(--gutter) * 2)), var(--max));
   margin: 0 auto;
-  padding: 96px 24px;
+  padding: var(--section-y) 0;
 }
 
 .section-alt {
+  width: 100%;
   max-width: none;
-  padding-inline: max(24px, calc((100vw - var(--max)) / 2));
+  padding-inline: max(var(--gutter), calc((100vw - var(--max)) / 2));
   background: var(--bg-soft);
   border-block: 1px solid var(--line);
 }
 
 .section-heading {
   max-width: 720px;
-  margin-bottom: 42px;
+  margin-bottom: 46px;
 }
 
 .section-heading h2,
@@ -363,7 +367,7 @@ nav a:hover {
 .judging-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: var(--grid-gap);
 }
 
 .card,
@@ -377,7 +381,7 @@ nav a:hover {
 }
 
 .feature-card {
-  padding: 26px;
+  padding: 28px;
   min-height: 250px;
 }
 
@@ -426,8 +430,8 @@ nav a:hover {
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
   align-items: center;
-  margin-top: 18px;
-  padding: 36px;
+  margin-top: 22px;
+  padding: clamp(28px, 4vw, 40px);
   border: 1px solid rgba(0, 122, 83, .25);
   background: linear-gradient(135deg, rgba(0, 122, 83, .09), rgba(0, 61, 124, .06));
   border-radius: 8px;
@@ -458,7 +462,7 @@ nav a:hover {
 
 .timeline {
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
 .timeline-item {
@@ -466,7 +470,7 @@ nav a:hover {
   grid-template-columns: 150px 1fr;
   gap: 26px;
   align-items: center;
-  padding: 26px 30px;
+  padding: 28px 32px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--card);
@@ -531,9 +535,9 @@ nav a:hover {
 .submit-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  gap: clamp(28px, 5vw, 56px);
   align-items: center;
-  padding: 46px;
+  padding: clamp(28px, 5vw, 48px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(135deg, rgba(0, 61, 124, .08), rgba(239, 124, 0, .09));
@@ -596,7 +600,7 @@ nav a:hover {
 .filter-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
   max-width: 620px;
@@ -628,7 +632,7 @@ nav a:hover {
 }
 
 .idea-card {
-  padding: 24px;
+  padding: 26px;
   transition: transform .2s, border-color .2s, box-shadow .2s;
 }
 
@@ -664,7 +668,7 @@ nav a:hover {
 .prompt-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: var(--grid-gap);
 }
 
 .prompt-card {
@@ -713,10 +717,10 @@ pre {
 .tool-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: var(--grid-gap);
 }
 
-.tool-column { padding: 28px; }
+.tool-column { padding: 30px; }
 .tool-column h3 { margin-top: 24px; }
 
 .tool-tags {
@@ -743,7 +747,7 @@ pre {
   outline: none;
 }
 
-.score-card { padding: 26px; }
+.score-card { padding: 28px; }
 
 .score-card strong {
   color: var(--orange);
@@ -756,9 +760,9 @@ pre {
 .prize-banner {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-top: 18px;
-  padding: 34px;
+  gap: clamp(20px, 4vw, 32px);
+  margin-top: 22px;
+  padding: clamp(28px, 4vw, 40px);
   border-radius: 8px;
   border: 1px solid rgba(239, 124, 0, .30);
   background: linear-gradient(135deg, rgba(239, 124, 0, .12), rgba(0, 61, 124, .05));
@@ -785,8 +789,8 @@ pre {
 
 .submit-shell {
   display: grid;
-  gap: 28px;
-  padding: 46px;
+  gap: 32px;
+  padding: clamp(28px, 5vw, 48px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(135deg, rgba(0, 61, 124, .08), rgba(239, 124, 0, .09));
@@ -962,7 +966,7 @@ pre {
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--grid-gap);
 }
 
 .project-empty {
@@ -1059,7 +1063,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  padding: 38px max(24px, calc((100vw - var(--max)) / 2));
+  padding: 38px max(var(--gutter), calc((100vw - var(--max)) / 2));
   border-top: 5px solid var(--orange);
   background: var(--blue);
   color: rgba(255, 255, 255, .78);
@@ -1118,9 +1122,14 @@ footer a:hover { color: #fff; }
 }
 
 @media (max-width: 640px) {
+  :root {
+    --gutter: 18px;
+    --section-y: 72px;
+    --grid-gap: 16px;
+  }
+
   .site-header {
     gap: 12px;
-    padding-inline: 18px;
   }
 
   .site-header .button-small { display: none; }
@@ -1133,10 +1142,6 @@ footer a:hover { color: #fff; }
   .hero {
     padding-top: 78px;
     padding-bottom: 64px;
-  }
-
-  .hero::before {
-    inset-inline: 18px;
   }
 
   .hero h1 {
@@ -1162,14 +1167,6 @@ footer a:hover { color: #fff; }
   }
 
   .hero-stats div:last-child { border-bottom: 0; }
-
-  .section {
-    padding: 72px 18px;
-  }
-
-  .section-alt {
-    padding-inline: 18px;
-  }
 
   .challenge-grid,
   .ideas-grid,
@@ -1228,16 +1225,12 @@ footer a:hover { color: #fff; }
 }
 
 @media (max-width: 420px) {
-  .site-header {
-    padding-inline: 14px;
+  :root {
+    --gutter: 16px;
   }
 
   .brand-logo {
     width: min(164px, 68vw);
-  }
-
-  .hero {
-    padding-inline: 16px;
   }
 
   .hero-actions .button,
