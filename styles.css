@@ -879,6 +879,21 @@ pre {
   line-height: 1.55;
 }
 
+.prize-highlight {
+  display: block;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: #8a4700;
+  background: rgba(239, 124, 0, .14);
+  font-weight: 850;
+}
+
+.prize-detail {
+  display: block;
+}
+
 .submit-shell {
   display: grid;
   gap: 32px;
