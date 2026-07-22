@@ -74,6 +74,23 @@
       max-width: none;
     }
 
+    .sponsor-note {
+      margin: 18px 0 0;
+      color: var(--orange);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .sponsor-note a,
+    .sponsor-note strong {
+      color: inherit;
+    }
+
+    .sponsor-note a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     @media (max-width: 640px) {
       .prompt-disclosure summary {
         align-items: flex-start;
@@ -587,6 +604,7 @@ If deployment is blocked by account permissions or workspace policy, identify th
             <p>+ 3 months of ChatGPT Pro.</p>
           </article>
         </div>
+        <p class="sponsor-note">Thank you <a href="https://openai.com/" target="_blank" rel="noopener noreferrer">OpenAI</a> for sponsoring the OpenAI API credits &amp; <strong>ChatGPT Pro subscription</strong>.</p>
       </div>
     </section>
 
